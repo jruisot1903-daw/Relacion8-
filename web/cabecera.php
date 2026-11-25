@@ -24,7 +24,23 @@ spl_autoload_register(function ($clase){
         }
 });
 
+// Declaracion de colores texto y colores fondo
+const COLORESTEXTO = [
+    "blanco" => "white",
+    "negro" => "black",
+    "azul" => "blue",
+    "verde" => "green",
+    "amarillo" => "yellow"
+];
+
+const COLORESFONDO = [
+    "blanco" => "white",
+    "negro" => "black",
+    "azul" => "blue",
+    "verde" => "green",
+    "amarillo" => "yellow"
+];
+
 include(RUTABASE."/aplicacion/plantilla/plantilla.php");
 include(RUTABASE."/scripts/libreria/validacion.php");
-include(RUTABASE."/scripts/datos.php");
 //creo todos los objetos que necesita mi aplicación
