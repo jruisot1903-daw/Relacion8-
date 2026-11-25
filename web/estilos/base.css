@@ -1,0 +1,288 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+/* --- FUENTES ELEGANTE PARA TIENDA DE MUEBLES --- */
+@font-face {
+  font-family: 'NordicWood';
+  src: local('Georgia'), local('Times New Roman');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 40px 15px;
+  background-color: #fcfbfa; /* Fondo claro, limpio y minimalista */
+  background-image: linear-gradient(rgba(244, 241, 234, 0.4) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(244, 241, 234, 0.4) 1px, transparent 1px);
+  background-size: 20px 20px; /* Textura sutil que recuerda a planos de diseño o mallas */
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 16px;
+  color: #3e3835; /* Gris marrón oscuro para una lectura suave */
+  line-height: 1.6;
+}
+
+title {
+  font-family: 'NordicWood', Georgia, serif;
+  color: #8c6239; /* Marrón madera noble */
+  font-weight: bold;
+}
+
+/* --- BARRA UBICACIÓN: DISEÑO ARTESANAL --- */
+#barraUbicacion {
+  font-family: 'Segoe UI', sans-serif;
+  color: #8a817c;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 1.5px;
+  padding: 12px 0;
+  margin-bottom: 25px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-bottom: 1px solid #e0d9d3;
+  transition: border-color 0.25s ease;
+}
+
+#barraUbicacion span {
+  color: #bcb8b1;
+}
+
+/* --- ENLACES EN LA BARRA --- */
+#barraUbicacion a:link,
+#barraUbicacion a:visited {
+  text-decoration: none;
+  color: #8c6239;
+  padding: 2px 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+#barraUbicacion a:hover {
+  color: #b78752; /* Dorado madera / roble */
+  background-color: rgba(140, 98, 57, 0.05);
+}
+
+/* --- MENÚ PRINCIPAL: ESTILO SHOWROOM --- */
+#barraMenu {
+  display: flex;          
+  list-style: none;       
+  margin: 0 0 20px 0;      
+  padding: 0;             
+  gap: 10px;              
+  background: #f4f1ea;
+  border: 1px solid #e0d9d3;
+  border-radius: 6px;
+}
+
+#barraMenu li {
+  position: relative;
+}
+
+#barraMenu a {
+  display: inline-block;
+  text-decoration: none;  
+  color: #6a605a;         
+  font-size: 0.85em;       
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 12px 20px;
+  transition: all 0.2s ease;
+}
+
+#barraMenu a:hover {
+  color: #8c6239;         
+  background-color: #ede8df;
+}
+
+/* Línea de madera activa abajo */
+#barraMenu li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #8c6239;
+  transition: width 0.2s ease;
+}
+
+#barraMenu li:hover::after {
+  width: 100%;
+}
+
+#barraMenu a:visited {
+  color: #6a605a;
+}
+
+/* --- CONTENEDOR PRINCIPAL: EL DOCUMENTO --- */
+#documento {
+  width: 1100px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #e6e1da;
+  border-radius: 8px; 
+  box-shadow: 0 4px 20px rgba(140, 98, 57, 0.08); /* Sombra cálida y suave */
+}
+
+/* --- CABECERA DE LA TIENDA --- */
+#cabecera {
+  background: linear-gradient(135deg, #4a3e3d 0%, #3e3230 100%); /* Color café/nogal oscuro */
+  color: #fcfbfa;
+  padding: 30px;
+  border-radius: 6px;
+  border-bottom: 4px solid #8c6239;
+  margin-bottom: 25px;
+}
+
+#cabecera #titulo {
+  margin: 0;
+  font-family: 'NordicWood', Georgia, serif;
+  font-size: 2.2em; 
+  font-weight: normal; 
+  letter-spacing: 1px;
+  color: #f4f1ea;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* --- BOTONES PREMIUM --- */
+.boton {
+  display: inline-block;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  background-color: #8c6239; /* Marrón corporativo */
+  color: #ffffff;
+  border: 1px solid #8c6239;
+  border-radius: 4px;
+  padding: 10px 22px;
+  margin: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.boton a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.boton:hover {
+  background-color: #ffffff;
+  color: #8c6239;
+  box-shadow: 0 2px 8px rgba(140, 98, 57, 0.2);
+}
+
+.boton a:hover {
+  color: #8c6239;
+}
+
+/* --- TABLA DE INVENTARIO --- */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border: 1px solid #e0d9d3;
+  margin-top: 15px;
+  border-radius: 4px;
+}
+
+.tabla th {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fbf9f6;
+  color: #4a3e3d;
+  padding: 14px;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #8c6239; /* Separador color madera */
+}
+
+.tabla td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eeebe5;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95em;
+  color: #4a4542;
+}
+
+.tabla tr.par {
+  background-color: #faf9f6;
+}
+
+.tabla tr.impar {
+  background-color: #ffffff;
+}
+
+.tabla tr:hover {
+  background-color: #f5efe6; /* Resaltado suave tono lino */
+  color: #000000;
+  transition: background-color 0.15s ease;
+}
+
+/* --- PIE DE PÁGINA --- */
+#pie {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f1ea;
+  color: #8a817c;
+  font-size: 0.8em;
+  padding: 18px;
+  text-align: center;
+  border-top: 1px solid #e0d9d3;
+  margin-top: 30px;
+  border-radius: 0 0 6px 6px;
+  letter-spacing: 1px;
+}
+
+/* --- INPUTS Y FORMULARIOS --- */
+.for_texto {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #333333;
+  padding: 11px;
+  margin: 8px 0 18px 0;
+  border-radius: 4px;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.95em;
+  transition: all 0.2s ease;
+}
+
+.for_texto:focus {
+  border-color: #8c6239;
+  box-shadow: 0 0 0 3px rgba(140, 98, 57, 0.15);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #4a3e3d;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+/* --- MENSAJES DE ALERTA Y ÉXITO --- */
+.error {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #b91c1c;
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
