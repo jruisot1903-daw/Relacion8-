@@ -70,32 +70,43 @@ function inicioCuerpo(string $cabecera, array $barraUbi = [])
             </header>
 
             <div id="barraLogin">
-
-            </div>
-            <div id="barraMenu">
-                <ul id="barraMenu">
-                    <li><a href="../../index.php">Inicio</a></li>
-                </ul>
-
+    <?php if ($acceso->hayUsuario()) { ?>
+        Usuario: <strong><?= htmlspecialchars($acceso->getNombre()) ?></strong>
+        | <a href="/aplicacion/acceso/loggout.php">Cerrar sesión</a>
+    <?php } else { ?>
+        <a href="/aplicacion/acceso/login.php">Iniciar sesión</a>
+    <?php } ?>
+</div>
+<div id="barraMenu">
+    <ul>
+        <li><a href="/index.php">Inicio</a></li>
+        <?php if ($acceso->hayUsuario()) { ?>
+            <li><a href="/aplicacion/texto/verTexto.php">Textos</a></li>
+            <li><a href="/aplicacion/personalizar/index.php">Personalizar</a></li>
+            <?php if ($acceso->puedePermiso(1)) { ?>
+                <li><a href="/aplicacion/personalizar/personalizar.php">Cambiar colores</a></li>
+            <?php } ?>
+        <?php } ?>
+    </ul>
+    <br><br>
+</div>
                 <br><br>
 
             </div>
             <div id="barraUbicacion"><?php
-                                        if ($barraUbi) {
-                                            foreach ($barraUbi as $elemento) {
-                                                if (isset($elemento["LINK"]) && isset($elemento["LINK"])) {
-                                                    echo " <a href =\"{$elemento["LINK"]}\" >";
-
-                                                    echo $elemento["TEXTO"];
-
-                                                    if ($elemento["LINK"])
-                                                        echo " </a>";
-                                                    echo " >> ";
-                                                }
-                                            }
-                                        }
-                                        ?>
-            </div>
+    if ($barraUbi) {
+        foreach ($barraUbi as $elemento) {
+            if (isset($elemento["TEXTO"])) {
+                if (!empty($elemento["LINK"])) {
+                    echo " <a href=\"{$elemento["LINK"]}\">{$elemento["TEXTO"]}</a>";
+                } else {
+                    echo " " . $elemento["TEXTO"];
+                }
+                echo " >> ";
+            }
+        }
+    }
+?></div>
             <div>
             <?php
         }

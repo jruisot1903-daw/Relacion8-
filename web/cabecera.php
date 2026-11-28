@@ -24,7 +24,24 @@ spl_autoload_register(function ($clase){
         }
 });
 
+// Colores: clave => valor CSS
+const COLORESFONDO = [
+    "blanco"   => "white",
+    "rojo"     => "red",
+    "verde"    => "green",
+    "amarillo" => "yellow",
+    "gris"     => "lightgray",
+];
+const COLORESTEXTO = [
+    "negro"  => "black",
+    "azul"   => "blue",
+    "blanco" => "white",
+    "rojo"   => "red",
+];
+
 include(RUTABASE."/aplicacion/plantilla/plantilla.php");
 include(RUTABASE."/scripts/libreria/validacion.php");
-include(RUTABASE."/scripts/datos.php");
+session_start();           
+$acl    = new ACLArray();
+$acceso = new Acceso();
 //creo todos los objetos que necesita mi aplicación
